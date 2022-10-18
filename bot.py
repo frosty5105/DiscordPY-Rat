@@ -89,7 +89,7 @@ try:
     iprequest = requests.get("https://ipinfo.io/json", verify=True)
     data = iprequest.json()
 except:
-    data[ip] = "Error"
+    data[ip] = "Error Has Occured"
 
 
 
